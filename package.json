@@ -1,12 +1,46 @@
 {
   "name": "advanced-node",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "0.0.1",
+  "description": "Professional API using Clean Architecture and TDD.",
+  "keywords": [
+    "clean architecture",
+    "clean code",
+    "tdd",
+    "ddd",
+    "solid",
+    "design patterns",
+    "node",
+    "typescript",
+    "jest",
+    "typeorm"
+  ],
+  "author": {
+    "name": "Rodrigo Manguinho",
+    "email": "rodrigo.manguinho@gmail.com",
+    "url": "https://rmanguinho.github.io"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rmanguinho/advanced-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rmanguinho/advanced-node/issues",
+    "email": "rodrigo.manguinho@gmail.com"
+  },
+  "scripts": {
+    "start": "node dist/main/api",
+    "build": "rimraf dist && tsc"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.2",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/module-alias": "^2.0.0",
+    "@types/node": "^16.0.1",
+    "typescript": "^4.3.5"
+  },
+  "engines": {
+    "node": "16.x"
+  }
 }
