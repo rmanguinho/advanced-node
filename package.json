@@ -30,7 +30,8 @@
   },
   "scripts": {
     "start": "node dist/main/api",
-    "build": "rimraf dist && tsc -p tsconfig-build.json",
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc -p tsconfig-build.json",
     "prepare": "husky install",
     "check": "npm-check -s -u",
     "lint": "eslint .",
