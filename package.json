@@ -31,13 +31,14 @@
   "scripts": {
     "start": "node dist/main/api",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
+    "prepare": "husky install",
+    "check": "npm-check -s -u",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --passWithNoTests --no-cache --runInBand",
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
-    "test:coverage": "npm test -- --coverage",
-    "prepare": "husky install"
+    "test:coverage": "npm test -- --coverage"
   },
   "dependencies": {
     "module-alias": "^2.2.2",
@@ -45,18 +46,19 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
-    "@types/module-alias": "^2.0.0",
-    "@types/node": "^16.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@types/module-alias": "^2.0.1",
+    "@types/node": "^16.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
     "eslint": "^7.30.0",
     "eslint-config-standard-with-typescript": "^20.0.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-promise": "^5.1.0",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
     "jest-mock-extended": "^1.0.16",
-    "lint-staged": "^11.0.0",
+    "lint-staged": "^11.0.1",
+    "npm-check": "^5.9.2",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.5"
   },
