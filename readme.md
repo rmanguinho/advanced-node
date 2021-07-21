@@ -16,15 +16,15 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 
 > ## Princípios
 
-* Single Responsibility Principle (SRP)
-* Open Closed Principle (OCP)
-* Liskov Substitution Principle (LSP)
-* Interface Segregation Principle (ISP)
-* Dependency Inversion Principle (DIP)
-* Separation of Concerns (SOC)
-* Don't Repeat Yourself (DRY)
-* You Aren't Gonna Need It (YAGNI)
-* Keep It Simple, Silly (KISS)
+* Single Responsibility
+* Open Closed
+* Liskov Substitution
+* Interface Segregation
+* Dependency Inversion
+* Separation of Concerns
+* Don't Repeat Yourself
+* You Aren't Gonna Need It
+* Keep It Simple
 * Composition Over Inheritance
 * Small Commits
 
@@ -51,6 +51,7 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Modular Design
 * Dependency Diagrams
 * Use Cases
+* Spike (Agile)
 
 > ## Bibliotecas e Ferramentas
 
