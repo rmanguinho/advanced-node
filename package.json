@@ -39,7 +39,8 @@
     "test": "jest --passWithNoTests --no-cache --runInBand",
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
-    "test:coverage": "npm test -- --coverage"
+    "test:coverage": "npm test -- --coverage",
+    "test:fb-api": "npm test -- -c ./jest.integration.config.js ./tests/external/facebook-api.test.ts"
   },
   "dependencies": {
     "axios": "^0.21.1",
