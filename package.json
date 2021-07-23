@@ -29,7 +29,7 @@
     "email": "rodrigo.manguinho@gmail.com"
   },
   "scripts": {
-    "start": "node dist/main/api",
+    "start": "node dist/main",
     "clean": "rimraf dist",
     "build": "npm run clean && tsc -p tsconfig-build.json",
     "prepare": "husky install",
@@ -44,6 +44,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "module-alias": "^2.2.2",
     "pg": "^8.6.0",
@@ -53,6 +55,8 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
     "@types/jest": "^26.0.24",
     "@types/jsonwebtoken": "^8.5.4",
     "@types/module-alias": "^2.0.1",
