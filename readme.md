@@ -43,12 +43,31 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Builder
 * Template Method
 * Singleton
+* Chain of Responsibility
+* Proxy
+
+> ## Code Smells (Anti-Patterns)
+
+* Data Clumps
+* Divergent Change
+* Duplicate Code
+* Inappropriate Intimacy
+* Feature Envy
+* Large Class
+* Long Method
+* Long Parameter List
+* Middle Man
+* Primitive Obsession
+* Refused Bequest
+* Shotgun Surgery
+* Speculative Generality
 
 > ## Metodologias e Designs
 
 * TDD
 * Clean Architecture
 * DDD
+* Refactoring
 * GitFlow
 * Modular Design
 * Dependency Diagrams
