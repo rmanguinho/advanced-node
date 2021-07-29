@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "incremental": true,
     "outDir": "dist",
     "rootDirs": ["src", "tests"],
     "target": "es2021",
