@@ -3,10 +3,7 @@ export interface LoadUserAccountRepository {
 }
 
 export namespace LoadUserAccountRepository {
-  export type Params = {
-    email: string
-  }
-
+  export type Params = { email: string }
   export type Result = undefined | {
     id: string
     name?: string
@@ -24,8 +21,5 @@ export namespace SaveFacebookAccountRepository {
     name: string
     facebookId: string
   }
-
-  export type Result = {
-    id: string
-  }
+  export type Result = { id: string }
 }
