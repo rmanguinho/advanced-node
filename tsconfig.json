@@ -16,6 +16,8 @@
       "@/tests/*": ["../tests/*"]
     },
     "strict": true,
+    "noImplicitOverride": true,
+    "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
