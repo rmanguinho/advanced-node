@@ -48,6 +48,8 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 
 > ## Code Smells (Anti-Patterns)
 
+* Blank Lines
+* Comments
 * Data Clumps
 * Divergent Change
 * Duplicate Code
