@@ -82,11 +82,14 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Typescript
 * Git
 * Jest
+* Ts-Jest
+* Jest-Mock-Extended
 * TypeORM
 * Axios
 * Postgres
 * JsonWebToken
 * Express
+* Cors
 * Supertest
 * Husky
 * Lint Staged
@@ -96,6 +99,10 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * In-Memory Postgres Server
 * Module-Alias
 * Npm Check
+* Travis CI
+* Coverals
+* DotEnv
+* Ts-Node-Dev
 
 > ## Features do Typescript
 
