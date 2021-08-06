@@ -1,3 +1,7 @@
-node_modules
-dist
+.husky
+.vscode
 coverage
+dist
+documentation
+node_modules
+public
