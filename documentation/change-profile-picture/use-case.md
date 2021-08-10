@@ -13,7 +13,7 @@
 
 > ## Fluxo alternativo 1: Usuário removeu sua foto
 1. ✅ Se o sistema não receber uma foto ignorar os passos 1 e 2
-3. Limpar a url da foto dos dados do usuário
+3. ✅ Limpar a url da foto dos dados do usuário
 4. Atualizar o campo de iniciais do usuário com a primeira letra do primeiro e do último nome
 
 > ## Fluxo alternativo 1.1: Usuário não tem sobrenome
