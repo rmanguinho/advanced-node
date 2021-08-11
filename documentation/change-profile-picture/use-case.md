@@ -27,4 +27,4 @@
 
 > ## Fluxo de exceção: Erro ao atualizar foto do usuário
 1. ✅ Apagar a foto criada no FileStorage
-2. Repassar o mesmo erro recebido
+2. ✅ Repassar o mesmo erro recebido
