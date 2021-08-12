@@ -14,12 +14,20 @@ class AwsS3FileStorage {
 }
 
 describe('AwsS3FileStorage', () => {
+  let accessKey: string
+  let secret: string
+  let sut: AwsS3FileStorage
+
+  beforeAll(() => {
+    accessKey = 'any_access_key'
+    secret = 'any_secret'
+  })
+
+  beforeEach(() => {
+    sut = new AwsS3FileStorage(accessKey, secret)
+  })
+
   it('should config aws credentials on creation', () => {
-    const accessKey = 'any_access_key'
-    const secret = 'any_secret'
-
-    const sut = new AwsS3FileStorage(accessKey, secret)
-
     expect(sut).toBeDefined()
     expect(config.update).toHaveBeenCalledWith({
       credentials: {
