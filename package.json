@@ -46,6 +46,7 @@
     "test:fb-api": "npm run test:integration -- ./tests/external/facebook-api.test.ts"
   },
   "dependencies": {
+    "aws-sdk": "^2.967.0",
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -59,6 +60,7 @@
   },
   "devDependencies": {
     "@jest-mock/express": "^1.4.3",
+    "@types/aws-sdk": "^2.7.0",
     "@types/axios": "^0.14.0",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
