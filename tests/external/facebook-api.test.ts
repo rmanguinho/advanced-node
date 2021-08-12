@@ -1,6 +1,5 @@
 import { env } from '@/main/config/env'
-import { FacebookApi } from '@/infra/apis'
-import { AxiosHttpClient } from '@/infra/http'
+import { FacebookApi, AxiosHttpClient } from '@/infra/gateways'
 
 describe('Facebook Api Integration Tests', () => {
   let axiosClient: AxiosHttpClient
