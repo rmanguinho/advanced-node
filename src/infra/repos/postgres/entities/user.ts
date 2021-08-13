@@ -13,4 +13,10 @@ export class PgUser {
 
   @Column({ name: 'id_facebook', nullable: true })
   facebookId?: string
+
+  @Column({ name: 'foto', nullable: true })
+  pictureUrl?: string
+
+  @Column({ name: 'iniciais', nullable: true })
+  initials?: string
 }
