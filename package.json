@@ -46,7 +46,7 @@
     "test:fb-api": "npm run test:integration -- ./tests/external/facebook-api.test.ts"
   },
   "dependencies": {
-    "aws-sdk": "^2.967.0",
+    "aws-sdk": "^2.968.0",
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -59,7 +59,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@jest-mock/express": "^1.4.3",
+    "@jest-mock/express": "^1.4.4",
     "@types/aws-sdk": "^2.7.0",
     "@types/axios": "^0.14.0",
     "@types/cors": "^2.8.12",
@@ -67,7 +67,7 @@
     "@types/jest": "^26.0.24",
     "@types/jsonwebtoken": "^8.5.4",
     "@types/module-alias": "^2.0.1",
-    "@types/node": "^16.6.0",
+    "@types/node": "^16.6.1",
     "@types/supertest": "^2.0.11",
     "@types/uuid": "^8.3.1",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
