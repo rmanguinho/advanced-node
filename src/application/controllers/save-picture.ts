@@ -1,4 +1,4 @@
-import { Controller } from '@/application/controllers/controller'
+import { Controller } from '@/application/controllers'
 import { MaxFileSizeError, RequiredFieldError, InvalidMimeTypeError } from '@/application/errors'
 import { badRequest, HttpResponse, ok } from '@/application/helpers'
 import { ChangeProfilePicture } from '@/domain/use-cases'
