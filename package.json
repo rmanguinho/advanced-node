@@ -43,7 +43,8 @@
     "test:coverage": "npm t -- --coverage",
     "test:integration": "npm t -- --config ./jest.integration.config.js",
     "test:coveralls": "npm run test:coverage && coveralls < coverage/lcov.info",
-    "test:fb-api": "npm run test:integration -- ./tests/external/facebook-api.test.ts"
+    "test:fb-api": "npm run test:integration -- ./tests/external/facebook-api.test.ts",
+    "test:s3": "npm run test:integration -- ./tests/external/aws-s3-file-storage.test.ts"
   },
   "dependencies": {
     "aws-sdk": "^2.972.0",
