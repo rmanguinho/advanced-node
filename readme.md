@@ -85,7 +85,8 @@ O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem 
 * Ts-Jest
 * Jest-Mock-Extended
 * TypeORM
-* Aws-Sdk
+* AWS-SDK
+* Multer
 * UUID
 * Axios
 * Postgres
