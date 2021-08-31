@@ -29,8 +29,16 @@ class PgConnection {
   }
 
   async disconnect (): Promise<void> {
+    if (this.query === undefined) throw new ConnectionNotFoundError()
     await getConnection().close()
     this.query = undefined
+  }
+}
+
+class ConnectionNotFoundError extends Error {
+  constructor () {
+    super('No connection was found')
+    this.name = 'ConnectionNotFoundError'
   }
 }
 
@@ -49,7 +57,7 @@ describe('PgConnection', () => {
       has: hasSpy
     })
     mocked(getConnectionManager).mockImplementation(getConnectionManagerSpy)
-    createQueryRunnerSpy = jest.fn()
+    createQueryRunnerSpy = jest.fn().mockReturnValue({})
     createConnectionSpy = jest.fn().mockResolvedValue({
       createQueryRunner: createQueryRunnerSpy
     })
@@ -98,5 +106,12 @@ describe('PgConnection', () => {
 
     expect(closeSpy).toHaveBeenCalledWith()
     expect(closeSpy).toHaveBeenCalledTimes(1)
+  })
+
+  it('should return ConnectionNotFoundError on disconnect if connection is not found', async () => {
+    const promise = sut.disconnect()
+
+    expect(closeSpy).not.toHaveBeenCalled()
+    await expect(promise).rejects.toThrow(new ConnectionNotFoundError())
   })
 })
