@@ -1,2 +1,2 @@
-export * from './pg-user-account'
-export * from './pg-user-profile'
+export * from './user-account'
+export * from './user-profile'
