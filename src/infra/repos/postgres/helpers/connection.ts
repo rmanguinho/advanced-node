@@ -1,5 +1,4 @@
-import { ConnectionNotFoundError } from '@/infra/repos/postgres/helpers'
-import { TransactionNotFoundError } from '@/infra/repos/postgres/helpers/errors'
+import { ConnectionNotFoundError, TransactionNotFoundError } from '@/infra/repos/postgres/helpers'
 
 import { createConnection, getConnection, getConnectionManager, ObjectType, QueryRunner, Repository, Connection, getRepository } from 'typeorm'
 
