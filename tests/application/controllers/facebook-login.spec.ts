@@ -1,5 +1,5 @@
 import { Controller, FacebookLoginController } from '@/application/controllers'
-import { UnauthorizedError } from '@/application/errors'
+import { ServerError, UnauthorizedError } from '@/application/errors'
 import { RequiredString } from '@/application/validation'
 import { AuthenticationError } from '@/domain/entities'
 
@@ -45,6 +45,18 @@ describe('FacebookLoginController', () => {
     expect(httpResponse).toEqual({
       statusCode: 401,
       data: new UnauthorizedError()
+    })
+  })
+
+  it('should return 500 on infra error', async () => {
+    const error = new Error('infra_error')
+    facebookAuth.mockRejectedValueOnce(error)
+
+    const httpResponse = await sut.handle({ token })
+
+    expect(httpResponse).toEqual({
+      statusCode: 500,
+      data: new ServerError(error)
     })
   })
 
