@@ -1,6 +1,7 @@
 import { DbTransaction } from '@/application/contracts'
 import { Controller } from '@/application/controllers'
 import { DbTransactionController } from '@/application/decorators'
+import { RequiredString } from '@/application/validation'
 
 import { mock, MockProxy } from 'jest-mock-extended'
 
@@ -13,6 +14,7 @@ describe('DbTransactionController', () => {
     db = mock()
     decoratee = mock()
     decoratee.perform.mockResolvedValue({ statusCode: 204, data: null })
+    decoratee.buildValidators.mockReturnValue([new RequiredString('any_value')])
   })
 
   beforeEach(() => {
@@ -30,11 +32,19 @@ describe('DbTransactionController', () => {
     expect(db.openTransaction).toHaveBeenCalledTimes(1)
   })
 
-  it('should execute decoratee', async () => {
+  it('should execute decoratee perform', async () => {
     await sut.perform({ any: 'any' })
 
     expect(decoratee.perform).toHaveBeenCalledWith({ any: 'any' })
     expect(decoratee.perform).toHaveBeenCalledTimes(1)
+  })
+
+  test('should execute decoratee validation', () => {
+    const validators = sut.buildValidators({ any: 'any' })
+
+    expect(decoratee.buildValidators).toHaveBeenCalledWith({ any: 'any' })
+    expect(decoratee.buildValidators).toHaveBeenCalledTimes(1)
+    expect(validators).toEqual([new RequiredString('any_value')])
   })
 
   it('should call commit and close transaction on success', async () => {

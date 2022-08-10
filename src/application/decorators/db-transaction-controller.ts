@@ -1,6 +1,7 @@
 import { DbTransaction } from '@/application/contracts'
 import { Controller } from '@/application/controllers'
 import { HttpResponse } from '@/application/helpers'
+import { Validator } from '@/application/validation'
 
 export class DbTransactionController extends Controller {
   constructor (
@@ -22,5 +23,9 @@ export class DbTransactionController extends Controller {
     } finally {
       await this.db.closeTransaction()
     }
+  }
+
+  override buildValidators (httpRequest: any): Validator[] {
+    return this.decoratee.buildValidators(httpRequest)
   }
 }
