@@ -59,7 +59,7 @@ describe('DbTransactionController', () => {
     })
   })
 
-  it('should return same result as decoratee', async () => {
+  it('should return same result as decoratee on success', async () => {
     const httpResponse = await sut.perform({ any: 'any' })
 
     expect(httpResponse).toEqual({ statusCode: 204, data: null })
