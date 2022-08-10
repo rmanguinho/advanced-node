@@ -30,11 +30,18 @@ describe('DbTransactionController', () => {
     expect(db.openTransaction).toHaveBeenCalledTimes(1)
   })
 
-  it('should execute decoratee', async () => {
+  it('should execute decoratee perform', async () => {
     await sut.perform({ any: 'any' })
 
     expect(decoratee.perform).toHaveBeenCalledWith({ any: 'any' })
     expect(decoratee.perform).toHaveBeenCalledTimes(1)
+  })
+
+  test('should execute decoratee validation', async () => {
+    await sut.buildValidators({ any: 'any' })
+
+    expect(decoratee.buildValidators).toHaveBeenCalledWith({ any: 'any' })
+    expect(decoratee.buildValidators).toHaveBeenCalledTimes(1)
   })
 
   it('should call commit and close transaction on success', async () => {
