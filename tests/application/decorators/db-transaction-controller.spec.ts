@@ -12,7 +12,7 @@ describe('DbTransactionController', () => {
   beforeAll(() => {
     db = mock()
     decoratee = mock()
-    decoratee.handle.mockResolvedValue({ statusCode: 204, data: null })
+    decoratee.perform.mockResolvedValue({ statusCode: 204, data: null })
   })
 
   beforeEach(() => {
@@ -33,8 +33,8 @@ describe('DbTransactionController', () => {
   it('should execute decoratee', async () => {
     await sut.perform({ any: 'any' })
 
-    expect(decoratee.handle).toHaveBeenCalledWith({ any: 'any' })
-    expect(decoratee.handle).toHaveBeenCalledTimes(1)
+    expect(decoratee.perform).toHaveBeenCalledWith({ any: 'any' })
+    expect(decoratee.perform).toHaveBeenCalledTimes(1)
   })
 
   it('should call commit and close transaction on success', async () => {
@@ -43,17 +43,6 @@ describe('DbTransactionController', () => {
     expect(db.commit).toHaveBeenCalledWith()
     expect(db.commit).toHaveBeenCalledTimes(1)
     expect(db.rollback).not.toHaveBeenCalled()
-    expect(db.closeTransaction).toHaveBeenCalledWith()
-    expect(db.closeTransaction).toHaveBeenCalledTimes(1)
-  })
-
-  it('should call rollback and close transaction on fail', async () => {
-    decoratee.handle.mockResolvedValueOnce({ statusCode: 400, data: null })
-    await sut.perform({ any: 'any' })
-
-    expect(db.rollback).toHaveBeenCalledWith()
-    expect(db.rollback).toHaveBeenCalledTimes(1)
-    expect(db.commit).not.toHaveBeenCalled()
     expect(db.closeTransaction).toHaveBeenCalledWith()
     expect(db.closeTransaction).toHaveBeenCalledTimes(1)
   })
@@ -78,7 +67,7 @@ describe('DbTransactionController', () => {
 
   it('should rethrow if decoratee throws', async () => {
     const error = new Error('decoratee_error')
-    decoratee.handle.mockRejectedValueOnce(error)
+    decoratee.perform.mockRejectedValueOnce(error)
 
     const promise = sut.perform({ any: 'any' })
 
