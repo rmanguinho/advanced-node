@@ -18,7 +18,7 @@ describe('ChangeProfilePicture', () => {
   let userProfileRepo: MockProxy<SaveUserPicture & LoadUserProfile>
   let sut: ChangeProfilePicture
 
-  beforeEach(() => {
+  beforeAll(() => {
     uuid = 'any_unique_id'
     buffer = Buffer.from('any_buffer')
     mimeType = 'image/png'
