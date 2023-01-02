@@ -53,7 +53,7 @@ describe('RequiredString', () => {
 
 describe('RequiredBuffer', () => {
   it('should extend Required', () => {
-    const sut = new RequiredString('')
+    const sut = new RequiredBuffer(Buffer.from(''))
 
     expect(sut).toBeInstanceOf(Required)
   })
